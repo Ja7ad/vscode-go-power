@@ -1,0 +1,233 @@
+{	
+	"package main and init, main function": {
+		"prefix": "pkgmi",
+		"body": "package main\n\nfunc init() {\n\t$0\n}\nfunc main() {\n\t$1\n}",
+		"description": "Snippet for main package & init, main function"
+	},
+	"if condition with initialize": {
+		"prefix": "ifi",
+		"body": "if ${1:err} := ${2:v}; ${1:err} != nil {\n$0\n}",
+		"description": "Snippet for If condition with initialize"
+	},
+	"go-package": {
+        "prefix": "pkg",
+        "body": [
+            "package ${1}",
+            "\t${2}"
+        ],
+        "description": "Snippet for declare go package"
+    },
+    "go-import-m": {
+        "prefix": "ims",
+        "body": [
+            "import (",
+            "\t\"${1}\"",
+            ")"
+        ],
+        "description": "Snippet for for multiple import"
+    },
+    "go-import-s": {
+        "prefix": "im",
+        "body": [
+            "import \"${1}\""
+        ],
+        "description": "Snippet for single import"
+    },
+    "go-func":{
+        "prefix": "f",
+        "body": [
+            "func ${1}() ${2} {",
+            "\t${3}",
+            "}"
+        ],
+        "description": "Snippet for for function"
+    },
+    "go-function-main": {
+        "prefix": "fm",
+        "body": [
+            "func main()  {",
+            "\t${1}",
+            "}"
+        ],
+        "description": "Snippet for main function"
+    },
+    "go-struct": {
+        "prefix": "st",
+        "body": [
+            "type ${1} struct {",
+            "\t${2}",
+            "}"
+        ],
+        "description": "Snippet for create struct"
+    },
+	"fiber sample": {
+		"prefix": "fibsm",
+		"body": "package main\n\nimport \"github.com/gofiber/fiber/v2\"\n\nfunc main() {\n\tapp := fiber.New()\n\n\tapp.Get(\"/\", func(c *fiber.Ctx) error {\n\t\treturn c.SendString(\"Hello, World 👋!\")\n\t})\n\n\tapp.Listen(\":3000\")\n}\n",
+		"description": "Snippet for Create Fiber sample code"
+	},
+	"fiber new instance": {
+		"prefix": "fibn",
+		"body": "app := fiber.New()",
+		"description": "Snippet for New creates a new Fiber named instance"
+	},
+	"fiber new instance with config": {
+		"prefix": "fibnc",
+		"body": "app := fiber.New(fiber.Config{$1})",
+		"description": "Snippet for Create New creates a new Fiber named instance with config"
+	},
+	"fiber static": {
+		"prefix": "fibs",
+		"body": "app.Static(\"$1\", \"$2\")",
+		"description": "Snippet for Create fiber static"
+	},
+	"fiber create mount": {
+		"prefix": "fibm",
+		"body": "app.Mount(\"/$1\", $2)",
+		"description": "Snippet for You can Mount Fiber instance by creating a *Mount"
+	},
+	"fiber create group": {
+		"prefix": "fibgp",
+		"body": "${1:v} := app.Group(\"/$2\", $3)",
+		"description": "Snippet for You can group routes by creating a *Group struct"
+	},
+	"fiber create fasthttp server": {
+		"prefix": "fibsv",
+		"body": "app.Server().MaxConnsPerIP = ${1:1}",
+		"description": "Snippet for Server returns the underlying fasthttp server"
+	},
+	"fiber use middleware": {
+		"prefix": "fibu",
+		"body": "app.Use($1)",
+		"description": "Snippet for Use registers a middleware route that will match requests with the provided prefix"
+	},
+	"fiber listen": {
+		"prefix": "fibl",
+		"body": "app.Listen(\"$1:${2:3000}\")",
+		"description": "Snippet for Listen serves HTTP requests from the given addr."
+	},
+	"fiber listenTLS": {
+		"prefix": "fiblt",
+		"body": "app.ListenTLS(\"$1:${2:3000}\", \"$3\", \"$4\")",
+		"description": "Snippet for Listen with TLS serves HTTP requests from the given addr."
+	},
+	"fiber listener": {
+		"prefix": "fiblr",
+		"body": "app.Listener($1)",
+		"description": "Snippet for Listener can be used to pass a custom listener."
+	},
+	"fiber basicAuth middleware": {
+		"prefix": "fibuba",
+		"body": "app.Use(basicauth.New(basicauth.Config{$1}))",
+		"description": "Snippet for Create a BasicAuth middleware instance"
+	},
+	"fiber Compress middleware": {
+		"prefix": "fibucm",
+		"body": "app.Use(compress.New(compress.Config{$1}))",
+		"description": "Snippet for Create a Compress middleware instance"
+	},
+	"fiber Cache middleware": {
+		"prefix": "fibuch",
+		"body": "app.Use(cache.New(cache.Config{$1}))",
+		"description": "Snippet for Create a Cache middleware instance"
+	},
+	"fiber CORS middleware": {
+		"prefix": "fibuco",
+		"body": "app.Use(cors.New(cors.Config{$1}))",
+		"description": "Snippet for Create a Cross-Origin Resource Sharing (CORS) middleware instance"
+	},
+	"fiber CSRF middleware": {
+		"prefix": "fibucs",
+		"body": "app.Use(csrf.New(csrf.Config{$1}))",
+		"description": "Snippet for Create a CSRF middleware instance"
+	},
+	"fiber Filesystem middleware": {
+		"prefix": "fibufs",
+		"body": "app.Use(filesystem.New(filesystem.Config{$1}))",
+		"description": "Snippet for Create a Filesystem middleware instance"
+	},
+	"fiber Favicon middleware": {
+		"prefix": "fibufs",
+		"body": "app.Use(favicon.New(favicon.Config{$1}))",
+		"description": "Snippet for Create a Favicon middleware instance"
+	},
+	"fiber Limiter middleware": {
+		"prefix": "fibulm",
+		"body": "app.Use(limiter.New(limiter.Config{$1}))",
+		"description": "Snippet for Create a Limiter middleware instance"
+	},
+	"fiber Logger middleware": {
+		"prefix": "fibulg",
+		"body": "app.Use(logger.New(logger.Config{$1}))",
+		"description": "Snippet for Create a Logger middleware instance"
+	},
+	"fiber Pprof middleware": {
+		"prefix": "fibupp",
+		"body": "app.Use(pprof.New())",
+		"description": "Snippet for Create a Pprof middleware instance"
+	},
+	"fiber Proxy middleware": {
+		"prefix": "fibupx",
+		"body": "app.Use(proxy.Balancer(proxy.Config{$1}))",
+		"description": "Snippet for Create a Proxy middleware instance"
+	},
+	"fiber RequestID middleware": {
+		"prefix": "fiburq",
+		"body": "app.Use(requestid.New(requestid.Config{$1}))",
+		"description": "Snippet for Create a RequestID middleware instance"
+	},
+	"fiber Recover middleware": {
+		"prefix": "fiburc",
+		"body": "app.Use(recover.New())",
+		"description": "Snippet for Create a Recover middleware instance"
+	},
+	"fiber get method": {
+		"prefix": "fibgt",
+		"body": "app.Get(\"/$1\", $2)",
+		"description": "Snippet for Get registers a route for GET methods that requests a representation of the specified resource. Requests using GET should only retrieve data."
+	},
+	"fiber get method full": {
+		"prefix": "fibgtf",
+		"body": "app.Get(\"$1\", func(c *fiber.Ctx) error {\n\t$2\n})",
+		"description": "Snippet for Get registers a route for GET methods that requests a representation of the specified resource. Requests using GET should only retrieve data."
+	},
+	"fiber post method": {
+		"prefix": "fibps",
+		"body": "app.Post(\"/$1\", $2)",
+		"description": "Snippet for Post registers a route for POST methods that is used to submit an entity to the specified resource, often causing a change in state or side effects on the server."
+	},
+	"fiber post method full": {
+		"prefix": "fibpsf",
+		"body": "app.Post(\"$1\", func(c *fiber.Ctx) error {\n\t$2\n})",
+		"description": "Snippet for Post registers a route for POST methods that is used to submit an entity to the specified resource, often causing a change in state or side effects on the server."
+	},
+	"fiber patch method": {
+		"prefix": "fibpc",
+		"body": "app.Patch(\"/$1\", $2)",
+		"description": "Snippet for Patch registers a route for PATCH methods that is used to apply partial modifications to a resource."
+	},
+	"fiber patch method full": {
+		"prefix": "fibpcf",
+		"body": "app.Patch(\"$1\", func(c *fiber.Ctx) error {\n\t$2\n})",
+		"description": "Snippet for Patch registers a route for PATCH methods that is used to apply partial modifications to a resource."
+	},
+	"fiber put method": {
+		"prefix": "fibpt",
+		"body": "app.Put(\"/$1\", $2)",
+		"description": "Snippet for Put registers a route for PUT methods that replaces all current representations of the target resource with the request payload."
+	},
+	"fiber put method full": {
+		"prefix": "fibptf",
+		"body": "app.Put(\"$1\", func(c *fiber.Ctx) error {\n\t$2\n})",
+		"description": "Snippet for Put registers a route for PUT methods that replaces all current representations of the target resource with the request payload."
+	},
+	"fiber delete method": {
+		"prefix": "fibdl",
+		"body": "app.Delete(\"/$1\", $2)",
+		"description": "Snippet for Delete registers a route for DELETE methods that deletes the specified resource."
+	},
+	"fiber delete method full": {
+		"prefix": "fibdlf",
+		"body": "app.Delete(\"$1\", func(c *fiber.Ctx) error {\n\t$2\n})",
+		"description": "Snippet for Delete registers a route for DELETE methods that deletes the specified resource."
+	}
+}
