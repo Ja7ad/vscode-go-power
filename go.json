@@ -9,55 +9,24 @@
 		"body": "if ${1:err} := ${2:v}; ${1:err} != nil {\n$0\n}",
 		"description": "Snippet for If condition with initialize"
 	},
-	"go-package": {
+	"empty package": {
         "prefix": "pkg",
-        "body": [
-            "package ${1}",
-            "\t${2}"
-        ],
+        "body": "package ${1}\n${2}",
         "description": "Snippet for declare go package"
     },
-    "go-import-m": {
-        "prefix": "ims",
-        "body": [
-            "import (",
-            "\t\"${1}\"",
-            ")"
-        ],
-        "description": "Snippet for for multiple import"
-    },
-    "go-import-s": {
-        "prefix": "im",
-        "body": [
-            "import \"${1}\""
-        ],
-        "description": "Snippet for single import"
-    },
-    "go-func":{
-        "prefix": "f",
-        "body": [
-            "func ${1}() ${2} {",
-            "\t${3}",
-            "}"
-        ],
-        "description": "Snippet for for function"
-    },
-    "go-function-main": {
-        "prefix": "fm",
-        "body": [
-            "func main()  {",
-            "\t${1}",
-            "}"
-        ],
+    "main function": {
+        "prefix": "main",
+        "body": "func main() {\n\t${1}\n}",
         "description": "Snippet for main function"
     },
-    "go-struct": {
-        "prefix": "st",
-        "body": [
-            "type ${1} struct {",
-            "\t${2}",
-            "}"
-        ],
+    "main name": {
+        "prefix": "main",
+        "body": "main",
+        "description": "main"
+    },
+    "init new struct": {
+        "prefix": "struct",
+        "body": "type ${1} struct {\n\t${2}\n}",
         "description": "Snippet for create struct"
     },
 	"fiber sample": {
