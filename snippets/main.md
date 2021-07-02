@@ -19,3 +19,4 @@
 |forl|for loop statement|
 |if|value != nil {...}|
 |struct|struct {...}{}|
+|ch|channel send and receiver|

@@ -2,7 +2,7 @@
 	"name": "go-power",
 	"displayName": "Go Power",
 	"description": "Golang power snippets for vscode",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"publisher": "Ja7ad",
     "license": "MIT",
 	"icon": "img/go-power.png",

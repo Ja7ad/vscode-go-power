@@ -89,6 +89,16 @@
         "body": "struct {\n\t${1}\n}{}",
         "description": "struct {...}{}"
     },
+	"chan <-": {
+		"prefix": "ch",
+		"body": "${1} <- ",
+		"description": "Send to channel"
+	},
+    "<- chan": {
+		"prefix": "ch",
+		"body": "<- ${1}",
+		"description": "Receive from channel"
+	},
 	"fiber sample": {
 		"prefix": "fibsm",
 		"body": "package main\n\nimport \"github.com/gofiber/fiber/v2\"\n\nfunc main() {\n\tapp := fiber.New()\n\n\tapp.Get(\"/\", func(c *fiber.Ctx) error {\n\t\treturn c.SendString(\"Hello, World 👋!\")\n\t})\n\n\tapp.Listen(\":3000\")\n}\n",
